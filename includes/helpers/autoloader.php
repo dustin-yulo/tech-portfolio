@@ -68,7 +68,7 @@ function autoloader( $resource = '' ) {
 				break;
 		}
 
-		$resource_path = sprintf( '%s/includes/%s/%s.php', untrailingslashit( DY_Tech_Portfolio_DIR_PATH ), $directory, $file_name );
+		$resource_path = sprintf( '%s/includes/%s/%s.php', untrailingslashit( DY_TECH_PORTFOLIO_DIR ), $directory, $file_name );
 
 	}
 
