@@ -26,10 +26,12 @@ class Assets {
 
 	public function register_styles() {
 		// Register styles.
-		// wp_register_style( 'main-css', AQUILA_BUILD_CSS_URI . '/main.css', ['bootstrap-css'], filemtime( AQUILA_BUILD_CSS_DIR_PATH . '/main.css' ), 'all' );
+		wp_register_style( 'theme-fonts', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/library/fonts/fonts.css', [], false, 'all' );
+		wp_register_style( 'main-css', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/css/main.css', [], filemtime( DY_TECH_PORTFOLIO_BUILD_DIR . '/css/main.css' ), 'all' );
 
 		// Enqueue Styles.
-		// wp_enqueue_style( 'main-css' );
+		wp_enqueue_style( 'theme-fonts' );
+		wp_enqueue_style( 'main-css' );
 
 	}
 

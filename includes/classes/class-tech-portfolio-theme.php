@@ -38,7 +38,7 @@ class TECH_PORTFOLIO_THEME {
 					'site-description',
 				],
 				'height'      => 100,
-				'width'       => 400,
+				'width'       => 100,
 				'flex-height' => true,
 				'flex-width'  => true,
 			]
