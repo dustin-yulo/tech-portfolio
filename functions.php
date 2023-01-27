@@ -30,6 +30,3 @@ function dy_tech_portfolio_get_theme_instance() {
 }
 
 dy_tech_portfolio_get_theme_instance();
-
-
-

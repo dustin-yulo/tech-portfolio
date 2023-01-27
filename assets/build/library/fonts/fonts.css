@@ -3,7 +3,7 @@
     font-family: 'Titillium Web';
     font-style: normal;
     font-weight: 600;
-    src: url('./titillium-web-v15-latin-600.eot'); /* IE9 Compat Modes */
+    src: url('./titillium-web-v15-latin/titillium-web-v15-latin-600.eot'); /* IE9 Compat Modes */
     src: local(''),
          url('./titillium-web-v15-latin/titillium-web-v15-latin-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
          url('./titillium-web-v15-latin/titillium-web-v15-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
