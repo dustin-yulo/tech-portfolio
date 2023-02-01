@@ -1,0 +1,1 @@
+(()=>{"use strict";const o=window.wp.i18n,e=window.wp.blocks,l=[{name:"layout-border-blue-fill",label:(0,o.__)("Blue outline","dy-tech-portfolio")},{name:"layout-border-white-no-fill",label:(0,o.__)("White outline - to be used with dark background","dy-tech-portfolio")}];wp.domReady((()=>{l.forEach((o=>(0,e.registerBlockStyle)("core/button",o)))}))})();
