@@ -10,12 +10,12 @@ import { registerBlockStyle } from '@wordpress/blocks';
 // Add more button styles
 const techPortfolioThemeButtonStyles = [
 	{
-		name: 'layout-border-blue-fill',
-		label: __( 'Blue outline', 'dy-tech-portfolio' ),
+		name: 'dy-tech-portfolio-theme-fill-button',
+		label: __( 'Theme fill', 'dy-tech-portfolio' ),
 	},
 	{
-		name: 'layout-border-white-no-fill',
-		label: __( 'White outline - to be used with dark background', 'dy-tech-portfolio' ),
+		name: 'dy-tech-portfolio-theme-outline-button',
+		label: __( 'Theme outline', 'dy-tech-portfolio' ),
 	},
 ];
 
