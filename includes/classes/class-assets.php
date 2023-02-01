@@ -22,22 +22,23 @@ class Assets {
 		// Actions
         add_action( 'wp_enqueue_scripts', [ $this, 'register_styles' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'register_scripts' ] );
+		add_action( 'enqueue_block_assets', [ $this, 'enqueue_editor_assets' ] );
 	}
 
 	public function register_styles() {
 		// Register styles.
-		wp_register_style( 'theme-fonts', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/library/google-fonts/fonts.css', [], false, 'all' );
+		wp_register_style( 'dy-tech-portfolio-fonts', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/library/google-fonts/fonts.css', [], false, 'all' );
 		wp_register_style( 'font-awesome', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/library/font-awesome/css/fontawesome.min.css', [], false, 'all' );
 		wp_register_style( 'font-awesome-brands', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/library/font-awesome/css/brands.min.css', [ 'font-awesome' ], false, 'all' );
 		wp_register_style( 'font-awesome-solid', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/library/font-awesome/css/solid.min.css', [ 'font-awesome' ], false, 'all' );
-		wp_register_style( 'main', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/css/main.css', [ 'theme-fonts' ], filemtime( DY_TECH_PORTFOLIO_BUILD_DIR . '/css/main.css' ), 'all' );
+		wp_register_style( 'dy-tech-portfolio-main', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/css/main.css', [ 'dy-tech-portfolio-fonts' ], filemtime( DY_TECH_PORTFOLIO_BUILD_DIR . '/css/main.css' ), 'all' );
 
 		// Enqueue Styles.
-		wp_enqueue_style( 'theme-fonts' );
+		wp_enqueue_style( 'dy-tech-portfoliofonts' );
 		wp_enqueue_style( 'font-awesome' );
 		wp_enqueue_style( 'font-awesome-brands' );
 		wp_enqueue_style( 'font-awesome-solid' );
-		wp_enqueue_style( 'main' );
+		wp_enqueue_style( 'dy-tech-portfolio-main' );
 
 	}
 
@@ -57,8 +58,7 @@ class Assets {
 	/**
 	 * Enqueue editor scripts and styles.
 	 */
-	// public function enqueue_editor_assets() {
-
+	public function enqueue_editor_assets() {
 	// 	$asset_config_file = sprintf( '%s/assets.php', AQUILA_BUILD_PATH );
 
 	// 	if ( ! file_exists( $asset_config_file ) ) {
@@ -75,16 +75,16 @@ class Assets {
 	// 	$js_dependencies = ( ! empty( $editor_asset['dependencies'] ) ) ? $editor_asset['dependencies'] : [];
 	// 	$version         = ( ! empty( $editor_asset['version'] ) ) ? $editor_asset['version'] : filemtime( $asset_config_file );
 
-	// 	// Theme Gutenberg blocks JS.
-	// 	if ( is_admin() ) {
-	// 		wp_enqueue_script(
-	// 			'aquila-blocks-js',
-	// 			AQUILA_BUILD_JS_URI . '/blocks.js',
-	// 			$js_dependencies,
-	// 			$version,
-	// 			true
-	// 		);
-	// 	}
+		// Theme Gutenberg blocks JS.
+		if ( is_admin() ) {
+			wp_enqueue_script(
+				'dy-tech-portfolio-blocks',
+				DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/js/blocks.js',
+				[],
+				false,
+				true
+			);
+		}
 
 	// 	// Theme Gutenberg blocks CSS.
 	// 	$css_dependencies = [
@@ -100,6 +100,6 @@ class Assets {
 	// 		'all'
 	// 	);
 
-	// }
+	}
 
 }

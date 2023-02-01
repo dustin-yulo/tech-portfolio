@@ -20,7 +20,7 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
-<div id="page" class="site">
+<div id="page" class="site-wrapper">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'dy-tech-portfolio' ); ?></a>
 
 	<?php get_template_part( 'template-parts/header/site-header' ); ?>
