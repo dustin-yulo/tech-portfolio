@@ -58,6 +58,14 @@ class TECH_PORTFOLIO_THEME {
 			]
 		);
 
+		add_theme_support( 'editor-color-palette', [
+			[
+				'name'  => esc_attr__( 'Theme primary color', 'dy-tech-portfolio' ),
+				'slug'  => 'dy-tech-portfolio-theme-primary',
+				'color' => '#009bc6',
+			]
+		] );
+
 		add_theme_support( 'post-thumbnails' );
 
 		add_theme_support( 'customize-selective-refresh-widgets' );

@@ -18,8 +18,20 @@ html,
 body,
 .site-wrapper {
     min-height: 100vh;
+    height: 100%;
     overflow-x: hidden;
     margin: 0;
+}
+
+html.logged-in {
+    min-height: calc(100vh - $admin-bar-height);
+    height: calc(100% - $admin-bar-height);
+
+    body,
+    .site-wrapper {
+        min-height: calc(100vh - $admin-bar-height);
+        height: calc(100% - $admin-bar-height);
+    }
 }
 
 h1,
@@ -45,6 +57,11 @@ h2 {
     font-size: 2.88889rem;
 }
 
+h3 {
+    font-family: $text-font;
+    font-size: 1.22222rem;
+}
+
 p {
     font-weight: 300;
     line-height: 1.5;
@@ -54,11 +71,6 @@ p {
 a {
     color: #fff;
     text-decoration: none;
-}
-
-img {
-    width: 100%;
-    height: auto;
 }
 
 body:not(.custom-background) {
@@ -86,6 +98,11 @@ body:not(.custom-background) {
             width: 100%;
             max-width: 85px;
             margin: auto;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
         }
 
         .site-title {
@@ -302,13 +319,29 @@ body:not(.custom-background) {
     }
 }
 
+body.home .site-content {
+    align-items: center;
+}
+
 .site-content {
+    display: flex;
     margin-left: 300px;
     height: 100%;
 
     .content-area {
         max-width: 85%;
+        width: 100%;
         margin: 0 auto;
-        padding: 7.5% 0;
+
+        .entry-header {
+            margin-top: calc(7.5% + 1em);
+        }
+    }
+}
+
+.has-text-color {
+
+    &.has-dy-tech-portfolio-theme-primary-color {
+        color: $primary-color;
     }
 }
