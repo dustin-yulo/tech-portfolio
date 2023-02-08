@@ -67,6 +67,14 @@ p {
   margin: 0 0 1rem;
 }
 
+ul {
+  padding-left: 1em;
+}
+ul li {
+  font-weight: 300;
+  line-height: 1.5;
+}
+
 a {
   color: #fff;
   text-decoration: none;
@@ -119,6 +127,7 @@ body:not(.custom-background) {
 }
 .site-header .site-navigation ul li a {
   position: relative;
+  font-weight: 400;
   transition: 0.3s ease-in-out;
 }
 .site-header .site-navigation ul li a::before {
@@ -276,7 +285,7 @@ body.home .site-content {
   margin: 0 auto;
 }
 .site-content .content-area .entry-header {
-  margin-top: calc(7.5% + 1em);
+  margin-top: 7.5%;
 }
 
 .has-text-color.has-dy-tech-portfolio-theme-primary-color {
