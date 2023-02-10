@@ -29,5 +29,8 @@
     "sass-loader": "^12.1.0",
     "stylelint": "^14.16.1",
     "stylelint-config-standard": "^29.0.0"
+  },
+  "dependencies": {
+    "@wordpress/i18n": "^4.26.0"
   }
 }
