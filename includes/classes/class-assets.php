@@ -59,13 +59,11 @@ class Assets {
 	public function enqueue_editor_assets() {
 	
 		if ( is_admin() ) {
-			wp_enqueue_script(
-				'dy-tech-portfolio-blocks',
-				DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/js/blocks.js',
-				[],
-				false,
-				true
-			);
+			wp_enqueue_style( 'font-awesome', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/library/font-awesome/css/fontawesome.min.css', [], false, 'all' );
+			wp_enqueue_style( 'font-awesome-brands', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/library/font-awesome/css/brands.min.css', [ 'font-awesome' ], false, 'all' );
+			wp_enqueue_style( 'font-awesome-solid', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/library/font-awesome/css/solid.min.css', [ 'font-awesome' ], false, 'all' );
+
+			wp_enqueue_script( 'dy-tech-portfolio-blocks', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/js/blocks.js', [], false, true );
 		}
 	}
 

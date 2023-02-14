@@ -33,7 +33,9 @@ export default function Edit( { attributes, setAttributes } ) {
 				</PanelBody>
 			</InspectorControls>
 			<div {...useBlockProps()}>
-				<Button>
+				<Button
+					icon={ <i class={ fontAwesomeClass } /> }
+				>
 					<RichText
 						placeholder={ __( 'Add text...', 'dy-tech-portfolio' ) }
 						value={ buttonText }
