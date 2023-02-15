@@ -1,6 +1,7 @@
 import { __ } from '@wordpress/i18n';
 import { registerBlockType } from '@wordpress/blocks';
 import Edit from './edit';
+import './style.scss';
 
 registerBlockType( 'dy-tech-portfolio/button-with-font-awesome-icon', {
     title: __( 'Button with Font Awesome icon', 'dy-tech-portfolio' ),
@@ -17,6 +18,10 @@ registerBlockType( 'dy-tech-portfolio/button-with-font-awesome-icon', {
         fontAwesomeClass: {
             type: 'string',
             default: '',
+        },
+        iconPosition: {
+            type: 'string',
+            default: 'left',
         }
     },
     edit: Edit

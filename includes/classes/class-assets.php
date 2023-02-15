@@ -22,7 +22,7 @@ class Assets {
 		// Actions
         add_action( 'wp_enqueue_scripts', [ $this, 'register_styles' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'register_scripts' ] );
-		add_action( 'enqueue_block_assets', [ $this, 'enqueue_editor_assets' ] );
+		add_action( 'enqueue_block_assets', [ $this, 'register_block_assets' ] );
 	}
 
 	public function register_styles() {
@@ -31,6 +31,7 @@ class Assets {
 		wp_register_style( 'dy-tech-portfolio-fonts', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/library/google-fonts/fonts.css', [], false, 'all' );
 		wp_register_style( 'font-awesome', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/library/font-awesome/css/fontawesome.min.css', [], false, 'all' );
 		wp_register_style( 'font-awesome-brands', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/library/font-awesome/css/brands.min.css', [ 'font-awesome' ], false, 'all' );
+		wp_register_style( 'font-awesome-regular', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/library/font-awesome/css/regular.min.css', [ 'font-awesome' ], false, 'all' );
 		wp_register_style( 'font-awesome-solid', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/library/font-awesome/css/solid.min.css', [ 'font-awesome' ], false, 'all' );
 		wp_register_style( 'dy-tech-portfolio-main', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/css/main.css', [ 'dy-tech-portfolio-fonts' ], filemtime( DY_TECH_PORTFOLIO_BUILD_DIR . '/css/main.css' ), 'all' );
 
@@ -38,6 +39,7 @@ class Assets {
 		wp_enqueue_style( 'dy-tech-portfolio-fonts' );
 		wp_enqueue_style( 'font-awesome' );
 		wp_enqueue_style( 'font-awesome-brands' );
+		wp_enqueue_style( 'font-awesome-regular' );
 		wp_enqueue_style( 'font-awesome-solid' );
 		wp_enqueue_style( 'dy-tech-portfolio-main' );
 	}
@@ -56,15 +58,20 @@ class Assets {
 		// ] );
 	}
 
-	public function enqueue_editor_assets() {
+	public function register_block_assets() {
 	
 		if ( is_admin() ) {
+			wp_enqueue_style( 'dy-tech-portfolio-fonts', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/library/google-fonts/fonts.css', [], false, 'all' );
 			wp_enqueue_style( 'font-awesome', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/library/font-awesome/css/fontawesome.min.css', [], false, 'all' );
 			wp_enqueue_style( 'font-awesome-brands', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/library/font-awesome/css/brands.min.css', [ 'font-awesome' ], false, 'all' );
+			wp_enqueue_style( 'font-awesome-regular', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/library/font-awesome/css/regular.min.css', [ 'font-awesome' ], false, 'all' );
 			wp_enqueue_style( 'font-awesome-solid', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/library/font-awesome/css/solid.min.css', [ 'font-awesome' ], false, 'all' );
+			wp_enqueue_style( 'blocks-editor', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/js/blocks.css', [], false, 'all' );
 
 			wp_enqueue_script( 'dy-tech-portfolio-blocks', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/js/blocks.js', [], false, true );
 		}
+
+		wp_enqueue_style( 'blocks', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/js/style-blocks.css', [], false, 'all' );
 	}
 
 }
