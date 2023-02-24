@@ -18,7 +18,6 @@ class TECH_PORTFOLIO_THEME {
 		Assets::get_instance();
 		Menus::get_instance();
 		Customizer::get_instance();
-		Blocks::get_instance();
 
 		$this->setup_hooks();
 	}
