@@ -29,6 +29,7 @@ class Custom_Post_Types {
             [
                 'post_type' => 'dy_tp_project',
                 'singular'  => 'Project',
+                'slug'      => 'projects',
                 'menu_icon' => 'dashicons-archive',
                 'supports'  => [ 'title', 'editor', 'thumbnail' ]
             ]
@@ -42,6 +43,7 @@ class Custom_Post_Types {
 	public function register_custom_post_type( $data ) {
         $post_type  = $data[ 'post_type' ];
         $singular   = $data[ 'singular' ];
+        $slug       = $data[ 'slug' ];
         $plural     = ( isset( $data[ 'plural' ] ) ) ? $data[ 'plural' ] : $singular . 's';
         $menu_icon  = ( isset( $data[ 'menu_icon' ] ) ) ? $data[ 'menu_icon' ] : 'dashicons-admin-generic';
         $supports   = ( isset( $data[ 'supports' ] ) ) ? $data[ 'supports' ] : [];
@@ -92,10 +94,11 @@ class Custom_Post_Types {
             'can_export' => true,
             'has_archive' => true,
             'hierarchical' => false,
-            'exclude_from_search' => true,
+            'exclude_from_search' => false,
             'show_in_rest' => true,
             'publicly_queryable' => true,
             'capability_type' => 'post',
+            'rewrite' => [ 'slug' => $slug ],
         ];
 
         register_post_type( $post_type, $args );
