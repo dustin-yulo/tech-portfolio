@@ -4,8 +4,10 @@
 
 :root {
   --theme-primary-color: #009bc6;
+  --theme-primary-color-darker: #007ea1;
   --theme-heading-font: Titillium Web, sans-serif;
   --theme-text-font: Open Sans, sans-serif;
+  --theme-transition: 0.3s ease-in-out;
 }
 
 html {
@@ -100,12 +102,28 @@ input[type=submit] {
   padding: 1.2rem 1.8rem;
   border: none;
   border-radius: 5px;
-  background: #009bc6;
+  background-color: #009bc6;
   cursor: pointer;
   transition: 0.3s ease-in-out;
 }
 input[type=submit]:hover {
-  transform: scale(1.05);
+  background-color: #007ea1;
+}
+
+button,
+[role=button] {
+  font-size: 1.11111rem;
+  font-weight: 300;
+  margin-bottom: 1.6rem;
+  padding: 0.83rem 2.77rem;
+  background-color: transparent;
+  border: 1px solid #009bc6;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+}
+button:hover,
+[role=button]:hover {
+  background-color: #009bc6;
 }
 
 body:not(.custom-background) {
@@ -172,6 +190,13 @@ body:not(.custom-background) {
   padding-left: 1rem;
 }
 .site-header .site-navigation ul li a:hover::before {
+  width: calc(2rem + 80px);
+}
+.site-header .site-navigation ul li.current-menu-item a {
+  color: #009bc6;
+  padding-left: 1rem;
+}
+.site-header .site-navigation ul li.current-menu-item a::before {
   width: calc(2rem + 80px);
 }
 .site-header .site-navigation ul.sub-menu li {
