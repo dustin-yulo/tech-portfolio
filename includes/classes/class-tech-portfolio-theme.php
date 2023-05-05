@@ -16,8 +16,10 @@ class TECH_PORTFOLIO_THEME {
 
 		// Load classes
 		Assets::get_instance();
-		Menus::get_instance();
 		Customizer::get_instance();
+		Custom_Meta_Boxes::get_instance();
+		Custom_Post_Types::get_instance();
+		Menus::get_instance();
 
 		$this->setup_hooks();
 	}
