@@ -48,7 +48,7 @@ class Custom_Meta_Boxes {
         if ( $post->post_type == 'dy_tp_project' ) {
             $dy_tp_project_post_meta = get_post_meta( $post->ID );
             $dy_tp_project_type = isset( $dy_tp_project_post_meta[ '_dy_tech_portfolio_custom_meta_key_project_type' ][ 0 ] ) ? $dy_tp_project_post_meta[ '_dy_tech_portfolio_custom_meta_key_project_type' ][ 0 ] : '';
-            $dy_tp_project_short_description = isset( $dy_tp_project_post_meta[ '_dy_tech_portfolio_custom_meta_key_project_short_description' ][ 0 ] ) ? $dy_tp_project_post_meta[ '_dy_tech_portfolio_custom_meta_key_project_short_description' ][ 0 ] : '';
+            $dy_tp_project_type_longer = isset( $dy_tp_project_post_meta[ '_dy_tech_portfolio_custom_meta_key_project_type_longer' ][ 0 ] ) ? $dy_tp_project_post_meta[ '_dy_tech_portfolio_custom_meta_key_project_type_longer' ][ 0 ] : '';
             $dy_tp_project_link = isset( $dy_tp_project_post_meta[ '_dy_tech_portfolio_custom_meta_key_project_link' ][ 0 ] ) ? $dy_tp_project_post_meta[ '_dy_tech_portfolio_custom_meta_key_project_link' ][ 0 ] : '';
             $dy_tp_project_link_new_tab = isset( $dy_tp_project_post_meta[ '_dy_tech_portfolio_custom_meta_key_project_link_new_tab' ][ 0 ] ) && $dy_tp_project_post_meta[ '_dy_tech_portfolio_custom_meta_key_project_link_new_tab' ][ 0 ] == '1' ? 'checked' : '';
             $dy_tp_project_link_rel_nofollow = isset( $dy_tp_project_post_meta[ '_dy_tech_portfolio_custom_meta_key_project_link_rel_nofollow' ][ 0 ] ) && $dy_tp_project_post_meta[ '_dy_tech_portfolio_custom_meta_key_project_link_rel_nofollow' ][ 0 ] == '1' ? 'checked' : '';
@@ -103,10 +103,10 @@ class Custom_Meta_Boxes {
                 </tr>
                 <tr>
                     <th class='dy-tech-portfolio-custom-meta-box__table-header' scope='row'>
-                        <label for='dy_tech_portfolio_custom_meta_box_project_short_description'><?php _e( 'Project short description', 'dy-tech-portfolio' ) ?></label>
+                        <label for='dy_tech_portfolio_custom_meta_box_project_type_longer'><?php _e( 'Project type (longer)', 'dy-tech-portfolio' ) ?></label>
                     </th>
                     <td class='dy-tech-portfolio-custom-meta-box__table-data'>
-                        <textarea id='dy_tech_portfolio_custom_meta_box_project_short_description' name='dy_tech_portfolio_custom_meta_box_project_short_description' rows='3'><?php echo esc_textarea( $dy_tp_project_short_description ); ?></textarea>
+                        <textarea id='dy_tech_portfolio_custom_meta_box_project_type_longer' name='dy_tech_portfolio_custom_meta_box_project_type_longer' rows='3'><?php echo esc_textarea( $dy_tp_project_type_longer ); ?></textarea>
                     </td>
                 </tr>
                 <tr>
@@ -214,10 +214,10 @@ class Custom_Meta_Boxes {
                 delete_post_meta( $post_id, '_dy_tech_portfolio_custom_meta_key_project_type' );
             }
 
-            if ( isset( $_POST[ 'dy_tech_portfolio_custom_meta_box_project_short_description' ] ) && ! empty( $_POST[ 'dy_tech_portfolio_custom_meta_box_project_short_description' ] ) ) {
-                update_post_meta( $post_id, '_dy_tech_portfolio_custom_meta_key_project_short_description', sanitize_textarea_field( $_POST[ 'dy_tech_portfolio_custom_meta_box_project_short_description' ] ) );
+            if ( isset( $_POST[ 'dy_tech_portfolio_custom_meta_box_project_type_longer' ] ) && ! empty( $_POST[ 'dy_tech_portfolio_custom_meta_box_project_type_longer' ] ) ) {
+                update_post_meta( $post_id, '_dy_tech_portfolio_custom_meta_key_project_type_longer', sanitize_textarea_field( $_POST[ 'dy_tech_portfolio_custom_meta_box_project_type_longer' ] ) );
             } else {
-                delete_post_meta( $post_id, '_dy_tech_portfolio_custom_meta_key_project_short_description' );
+                delete_post_meta( $post_id, '_dy_tech_portfolio_custom_meta_key_project_type_longer' );
             }
 
             if ( isset( $_POST[ 'dy_tech_portfolio_custom_meta_box_project_link' ] ) && ! empty( $_POST[ 'dy_tech_portfolio_custom_meta_box_project_link' ] ) ) {
