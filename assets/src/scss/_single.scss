@@ -1,0 +1,60 @@
+/* Stylesheet for single post of any post type */
+
+body.single {
+
+    .entry-title {
+        margin-bottom: 1em;
+    }
+
+    .post-thumbnail {
+        text-align: center;
+
+        img {
+            width: 100%;
+            max-width: 80%;
+            height: auto;
+        }
+    }
+
+    .entry-content {
+        display: flex;
+        margin-top: 50px;
+
+        [role="button"] {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-weight: 400;
+        }
+
+        > div {
+            flex-grow: 1;
+        }
+
+        .project-type-column {
+            width: 35%;
+            padding-right: 7%;
+
+            .project-type-row {
+                margin-bottom: 3rem;
+            }
+
+            .project-link-row {
+
+                .project-link {
+
+                    &::before,
+                    &::after {
+                        font-family: "Font Awesome 6 Free", sans-serif;
+                        font-weight: 900;
+                        font-size: 1.38888rem;
+                    }
+                }
+            }
+        }
+
+        .project-details-column {
+            width: 65%;
+        }
+    }
+}

@@ -48,7 +48,8 @@ h6 {
     line-height: 1;
 }
 
-h1 {
+h1,
+.project-column-title {
     font-family: $text-font;
     font-size: 1.11111rem;
     text-transform: uppercase;
@@ -98,21 +99,6 @@ textarea {
     height: 100%;
 }
 
-input[type="submit"] {
-    font-size: 1rem;
-    color: #fff;
-    padding: 1.2rem 1.8rem;
-    border: none;
-    border-radius: 5px;
-    background-color: $primary-color;
-    cursor: pointer;
-    transition: $transition;
-
-    &:hover {
-        background-color: $primary-color-darker;
-    }
-}
-
 button,
 [role="button"] {
     font-size: 1.11111rem;
@@ -126,6 +112,22 @@ button,
 
     &:hover {
         background-color: $primary-color;
+    }
+}
+
+input[type="submit"],
+.filled-button {
+    font-size: 1rem;
+    color: #fff;
+    padding: 1.2rem 1.8rem;
+    border: none;
+    border-radius: 5px;
+    background-color: $primary-color;
+    cursor: pointer;
+    transition: $transition;
+
+    &:hover {
+        background-color: $primary-color-darker;
     }
 }
 
@@ -401,6 +403,10 @@ body.home .site-content {
 
         .entry-header {
             margin-top: 7.5%;
+        }
+
+        .entry-content {
+            padding-bottom: 7.5%;
         }
     }
 }
