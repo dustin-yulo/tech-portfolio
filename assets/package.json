@@ -6,7 +6,9 @@
   "scripts": {
     "build": "mix",
     "watch": "mix watch",
-    "lint-scss": "stylelint \"src/scss/**/*.scss\""
+    "production": "mix --production",
+    "lint-scss": "stylelint \"src/scss/**/*.scss\"",
+    "precommit": "npm run lint-scss && npm run production"
   },
   "stylelint": {
     "extends": "@wordpress/stylelint-config/scss",
