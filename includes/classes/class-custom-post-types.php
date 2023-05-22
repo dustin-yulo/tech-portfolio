@@ -31,7 +31,7 @@ class Custom_Post_Types {
                 'singular'  => 'Project',
                 'slug'      => 'projects',
                 'menu_icon' => 'dashicons-archive',
-                'supports'  => [ 'title', 'editor', 'thumbnail' ]
+                'supports'  => [ 'title', 'editor', 'thumbnail', 'custom-fields' ]
             ]
         ];
 

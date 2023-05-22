@@ -21,6 +21,7 @@ class Custom_Meta_Boxes {
 
 		add_action( 'add_meta_boxes', [ $this, 'add_meta_box' ] );
         add_action( 'save_post', [ $this, 'save_meta_box' ] );
+		add_action( 'init', [ $this, 'register_custom_post_meta' ] );
 	}
 
     public function add_meta_box( $post_type ) {
@@ -38,6 +39,30 @@ class Custom_Meta_Boxes {
                 'advanced',
                 'high'
             );
+        }
+    }
+
+	public function register_custom_post_meta() {
+
+        $custom_post_metas = [
+            'dy_tp_project' => [
+				'_dy_tech_portfolio_custom_meta_key_project_type',
+				'_dy_tech_portfolio_custom_meta_key_project_type_longer',
+				'_dy_tech_portfolio_custom_meta_key_project_link'
+			]
+        ];
+
+        foreach ( $custom_post_metas as $custom_post_type => $custom_meta_keys ) {
+			foreach( $custom_meta_keys as $custom_meta_key ) {
+				register_post_meta(
+					$custom_post_type,
+					$custom_meta_key,
+					[
+						'show_in_rest' => true,
+						'single'       => true,
+					]
+				);
+			}
         }
     }
 
