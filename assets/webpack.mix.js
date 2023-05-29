@@ -1,6 +1,7 @@
 // webpack.mix.js
 
-let mix = require('laravel-mix');
+let mix = require( 'laravel-mix' );
 
-mix.sass('src/scss/main.scss', 'css')
-   .setPublicPath('build');
+mix.sass( 'src/scss/main.scss', 'css' )
+   .js( 'src/js/metabox-file-upload.js', 'js' )
+   .setPublicPath( 'build' );

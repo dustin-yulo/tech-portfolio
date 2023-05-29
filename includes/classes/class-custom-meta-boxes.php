@@ -19,10 +19,29 @@ class Custom_Meta_Boxes {
 
 	protected function setup_hooks() {
 
+        add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_custom_metabox_scripts' ] );
 		add_action( 'add_meta_boxes', [ $this, 'add_meta_box' ] );
         add_action( 'save_post', [ $this, 'save_meta_box' ] );
 		add_action( 'init', [ $this, 'register_custom_post_meta' ] );
 	}
+
+    public function enqueue_custom_metabox_scripts() {
+        wp_enqueue_script(
+            'metabox-file-upload-script',
+            get_template_directory_uri() . '/assets/build/js/metabox-file-upload.js',
+            [ 'jquery', 'wp-i18n', 'media-upload' ],
+            1.0,
+            true
+        );
+
+        wp_localize_script(
+            'metabox-file-upload-script',
+            'customUploads',
+            [
+                'projectSnapshot' => get_post_meta( get_the_ID(), '_dy_tp_project_snapshot', true ) 
+            ]
+        );
+    }
 
     public function add_meta_box( $post_type ) {
 
@@ -47,8 +66,7 @@ class Custom_Meta_Boxes {
         $custom_post_metas = [
             'dy_tp_project' => [
 				'_dy_tp_project_type',
-				'_dy_tp_project_type_longer',
-				'_dy_tp_project_link'
+				'_dy_tp_project_type_longer'
 			]
         ];
 
@@ -78,6 +96,7 @@ class Custom_Meta_Boxes {
             $dy_tp_project_link_new_tab = isset( $dy_tp_project_post_meta[ '_dy_tp_project_link_new_tab' ][ 0 ] ) && $dy_tp_project_post_meta[ '_dy_tp_project_link_new_tab' ][ 0 ] == '1' ? 'checked' : '';
             $dy_tp_project_link_rel_nofollow = isset( $dy_tp_project_post_meta[ '_dy_tp_project_link_rel_nofollow' ][ 0 ] ) && $dy_tp_project_post_meta[ '_dy_tp_project_link_rel_nofollow' ][ 0 ] == '1' ? 'checked' : '';
             $dy_tp_project_link_rel_noreferrer = isset( $dy_tp_project_post_meta[ '_dy_tp_project_link_rel_noreferrer' ][ 0 ] ) && $dy_tp_project_post_meta[ '_dy_tp_project_link_rel_noreferrer' ][ 0 ] == '1' ? 'checked' : '';
+            $dy_tp_project_snapshot = isset( $dy_tp_project_post_meta[ '_dy_tp_project_snapshot' ][ 0 ] ) ? $dy_tp_project_post_meta[ '_dy_tp_project_snapshot' ][ 0 ] : '';
             $dy_tp_project_status = isset( $dy_tp_project_post_meta[ '_dy_tp_project_status' ][ 0 ] ) && $dy_tp_project_post_meta[ '_dy_tp_project_status' ][ 0 ] == 'demo' ? 'demo' : 'live';
             $dy_tp_project_button_text = isset( $dy_tp_project_post_meta[ '_dy_tp_project_button_text' ][ 0 ] ) ? $dy_tp_project_post_meta[ '_dy_tp_project_button_text' ][ 0 ] : '';
             $dy_tp_project_button_text_placeholder = $dy_tp_project_status == 'demo' ? __( 'View demo', 'dy-tech-portfolio' ) : __( 'Visit website', 'dy-tech-portfolio' );
@@ -116,6 +135,14 @@ class Custom_Meta_Boxes {
                 .dy-tech-portfolio-custom-meta-box__table .dy-tech-portfolio-custom-meta-box__table-data input[type="radio"]:not(:first-child) {
                     margin-left: 1rem;
                 }
+
+                .dy-tech-portfolio-custom-meta-box__table .dy-tech-portfolio-custom-meta-box__table-data #dy-tp-custom-meta-box-project-snapshot-preview {
+                    width: 100%;
+                    max-height: 200px;
+                    object-fit: contain;
+                    object-position: left;
+                    margin-bottom: 1em;
+                }
             </style>
             <table class='dy-tech-portfolio-custom-meta-box__table form-table'>
                 <tr>
@@ -151,6 +178,17 @@ class Custom_Meta_Boxes {
                             <input type='checkbox' id='dy_tp_custom_meta_box_project_link_rel_noreferrer' name='dy_tp_custom_meta_box_project_link_rel_noreferrer' value='1' <?php echo esc_attr( $dy_tp_project_link_rel_noreferrer ); ?> />
                             <label for='dy_tp_custom_meta_box_project_link_rel_noreferrer'><?php _e( 'Add <code>rel="noreferrer"</code> to link', 'dy-tech-portfolio' ) ?></label>
                         </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th class='dy-tech-portfolio-custom-meta-box__table-header' scope='row'>
+                        <label><?php _e( 'Project snapshot', 'dy-tech-portfolio' ) ?></label>
+                    </th>
+                    <td class='dy-tech-portfolio-custom-meta-box__table-data'>
+                        <input type='hidden' id='dy-tp-custom-meta-box-project-snapshot' name='dy_tp_custom_meta_box_project_snapshot' value="<?php echo esc_url( $dy_tp_project_snapshot ) ?>" />
+                        <img id='dy-tp-custom-meta-box-project-snapshot-preview' src="<?php echo esc_url( $dy_tp_project_snapshot ) ?>" />
+                        <input type='button' id='dy-tp-custom-meta-box-project-snapshot-add-button' class='components-button is-secondary' value='<?php echo esc_attr( __( 'Add', 'dy-tech-portfolio' ) ) ?>' />
+                        <input type='button' id='dy-tp-custom-meta-box-project-snapshot-delete-button' class='components-button is-destructive' value='<?php echo esc_attr( __( 'Remove', 'dy-tech-portfolio' ) ) ?>' />
                     </td>
                 </tr>
                 <tr>
@@ -267,6 +305,12 @@ class Custom_Meta_Boxes {
                 update_post_meta( $post_id, '_dy_tp_project_link_rel_noreferrer', '1' );
             } else {
                 delete_post_meta( $post_id, '_dy_tp_project_link_rel_noreferrer' );
+            }
+
+            if ( isset( $_POST[ 'dy_tp_custom_meta_box_project_snapshot' ] ) && ! empty( $_POST[ 'dy_tp_custom_meta_box_project_snapshot' ] ) ) {
+                update_post_meta( $post_id, '_dy_tp_project_snapshot', esc_url_raw( $_POST[ 'dy_tp_custom_meta_box_project_snapshot' ] ) );
+            } else {
+                delete_post_meta( $post_id, '_dy_tp_project_snapshot' );
             }
 
             if ( isset( $_POST['dy_tp_custom_meta_box_project_status'] ) && ! empty( $_POST[ 'dy_tp_custom_meta_box_project_status' ] ) ) {
