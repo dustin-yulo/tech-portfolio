@@ -66,7 +66,8 @@ class Custom_Meta_Boxes {
         $custom_post_metas = [
             'dy_tp_project' => [
 				'_dy_tp_project_type',
-				'_dy_tp_project_type_longer'
+				'_dy_tp_project_type_longer',
+                '_dy_tp_project_snapshot'
 			]
         ];
 
