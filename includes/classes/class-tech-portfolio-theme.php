@@ -28,6 +28,8 @@ class TECH_PORTFOLIO_THEME {
 
 		// Actions
 		add_action( 'after_setup_theme', [ $this, 'theme_setup' ] );
+		add_action( 'wp_head', [ $this, 'expose_css_variables' ] );
+		add_action( 'admin_head', [ $this, 'expose_css_variables' ] );
 	}
 
 	public function theme_setup() {
@@ -86,6 +88,19 @@ class TECH_PORTFOLIO_THEME {
 		);
 
 		add_theme_support( 'align-wide' );
+		
+		add_theme_support( 'editor-styles' );
+		add_editor_style( 'assets/build/css/editor.css' );
+	}
+
+	public function expose_css_variables() {
+		$custom_background_color = !empty( get_theme_mod( 'background_color' ) ) ? get_theme_mod( 'background_color' ) : '1f1f1f';
+
+		echo '<style>';
+		echo ':root {
+			--custom-background-color: #' . $custom_background_color . ';
+		}';
+		echo '</style>';
 	}
 
 }

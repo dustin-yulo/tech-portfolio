@@ -22,6 +22,7 @@ class Assets {
 		// Actions
         add_action( 'wp_enqueue_scripts', [ $this, 'register_styles' ] );
 		add_action( 'wp_enqueue_scripts', [ $this, 'register_scripts' ] );
+		add_action( 'admin_enqueue_scripts', [ $this, 'admin_register_styles' ] );
 	}
 
 	public function register_styles() {
@@ -41,6 +42,14 @@ class Assets {
 		wp_enqueue_style( 'font-awesome-regular' );
 		wp_enqueue_style( 'font-awesome-solid' );
 		wp_enqueue_style( 'dy-tech-portfolio-main' );
+	}
+
+	public function admin_register_styles() {
+		// Register styles.
+		wp_register_style( 'dy-tech-portfolio-fonts', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/library/google-fonts/fonts.css', [], false, 'all' );
+
+		// Enqueue Styles.
+		wp_enqueue_style( 'dy-tech-portfolio-fonts' );
 	}
 
 	public function register_scripts() {

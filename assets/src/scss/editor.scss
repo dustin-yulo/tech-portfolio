@@ -1,0 +1,17 @@
+// https://developer.wordpress.org/reference/functions/add_editor_style/#div-comment-5332
+
+@import "variables";
+
+body {
+    font-family: $text-font;
+    background-color: var(--custom-background-color);
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: $heading-font;
+    }
+}
