@@ -12,7 +12,6 @@
 
 html {
     font-family: $text-font;
-    font-size: 18px;
     color: #fff;
 }
 
@@ -44,31 +43,31 @@ h5,
 h6 {
     font-family: $heading-font;
     font-weight: 600;
-    margin: 0 0 1rem;
+    margin: 0 0 1.125rem;
     line-height: 1;
 }
 
 h1,
 .project-column-title {
     font-family: $text-font;
-    font-size: 1.11111rem;
+    font-size: 1.25rem;
     text-transform: uppercase;
     color: $primary-color;
 }
 
 h2 {
-    font-size: 2.88889rem;
+    font-size: 3.25rem;
 }
 
 h3 {
     font-family: $text-font;
-    font-size: 1.22222rem;
+    font-size: 1.375rem;
 }
 
 p {
     font-weight: 300;
     line-height: 1.5;
-    margin: 0 0 1rem;
+    margin: 0 0 1.125rem;
 }
 
 ul {
@@ -88,23 +87,23 @@ a {
 input,
 textarea {
     font-family: $text-font;
-    font-size: 1rem;
+    font-size: 1.125rem;
     color: #fff;
     border: 1px solid $primary-color;
     border-radius: 5px;
     outline: none;
     background: none;
-    padding: 1.2rem 1.4rem;
+    padding: 1.35rem 1.575rem;
     width: 100%;
     height: 100%;
 }
 
 button,
 [role="button"] {
-    font-size: 1.11111rem;
+    font-size: 1.25rem;
     font-weight: 300;
-    margin-bottom: 1.6rem;
-    padding: 0.83rem 2.77rem;
+    margin-bottom: 1.8rem;
+    padding: 0.93375rem 3.11625rem;
     background-color: transparent;
     border: 1px solid $primary-color;
     border-radius: 5px;
@@ -117,9 +116,9 @@ button,
 
 input[type="submit"],
 .filled-button {
-    font-size: 1rem;
+    font-size: 1.125rem;
     color: #fff;
-    padding: 1.2rem 1.8rem;
+    padding: 1.35rem 2.025rem;
     border: none;
     border-radius: 5px;
     background-color: $primary-color;
@@ -164,26 +163,26 @@ body:not(.custom-background) {
         }
 
         .site-title {
-            font-size: 1.11111rem;
+            font-size: 1.25rem;
         }
 
         .site-title,
         .site-description {
             font-family: $heading-font;
             text-align: center;
-            margin: 0.5rem 0;
+            margin: 0.5625rem 0;
         }
     }
 
     .site-navigation {
 
         ul {
-            font-size: 1.11111rem;
+            font-size: 1.25rem;
             list-style: none;
             padding: 0;
 
             li {
-                margin: 2rem 0 2rem 80px;
+                margin: 2.25rem 0 2.25rem 80px;
 
                 a {
                     position: relative;
@@ -196,26 +195,26 @@ body:not(.custom-background) {
                         width: 0;
                         position: absolute;
                         top: 50%;
-                        left: calc(-80px - 2rem);
+                        left: calc(-80px - 2.25rem);
                         transition: $transition;
                     }
 
                     &:hover {
                         color: $primary-color;
-                        padding-left: 1rem;
+                        padding-left: 1.125rem;
 
                         &::before {
-                            width: calc(2rem + 80px);
+                            width: calc(2.25rem + 80px);
                         }
                     }
                 }
 
                 &.current-menu-item a {
                     color: $primary-color;
-                    padding-left: 1rem;
+                    padding-left: 1.125rem;
 
                     &::before {
-                        width: calc(2rem + 80px);
+                        width: calc(2.25rem + 80px);
                     }
                 }
             }
@@ -224,18 +223,18 @@ body:not(.custom-background) {
         ul.sub-menu {
 
             li {
-                margin: 1rem 0 1rem 1rem;
+                margin: 1.125rem 0 1.125rem 1.125rem;
 
                 a {
 
                     &::before {
-                        left: calc(-80px - 3rem);
+                        left: calc(-80px - 3.375rem);
                     }
 
                     &:hover {
 
                         &::before {
-                            width: calc(3rem + 80px);
+                            width: calc(3.375rem + 80px);
                         }
                     }
                 }
@@ -246,21 +245,21 @@ body:not(.custom-background) {
     .site-social {
         position: relative;
         text-align: center;
-        padding: 1.5rem 0;
+        padding: 1.6875rem 0;
 
         &::before {
             content: "";
             border-top: 1px solid #373737;
             position: absolute;
             top: 0;
-            right: -2rem;
+            right: -2.25rem;
             bottom: 0;
-            left: -2rem;
+            left: -2.25rem;
             height: 0;
         }
 
         .email {
-            font-size: 1.11111rem;
+            font-size: 1.25rem;
             font-weight: 300;
             transition: $transition;
 
@@ -272,7 +271,7 @@ body:not(.custom-background) {
         ul {
             list-style: none;
             padding: 0;
-            margin: 1rem 0 0;
+            margin: 1.125rem 0 0;
 
             li {
                 display: inline-block;
@@ -377,7 +376,7 @@ body:not(.custom-background) {
                         position: relative;
                         top: 50%;
                         transform: translateY(-50%);
-                        font-size: 1.27777rem;
+                        font-size: 1.4375rem;
                         color: $primary-color;
                         transition: $transition;
                     }
