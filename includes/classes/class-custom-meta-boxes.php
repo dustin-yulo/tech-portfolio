@@ -19,7 +19,7 @@ class Custom_Meta_Boxes {
 
 	protected function setup_hooks() {
 
-        add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_custom_metabox_scripts' ] );
+        add_action( 'enqueue_block_editor_assets', [ $this, 'enqueue_custom_metabox_scripts' ] );
 		add_action( 'add_meta_boxes', [ $this, 'add_meta_box' ] );
         add_action( 'save_post', [ $this, 'save_meta_box' ] );
 		add_action( 'init', [ $this, 'register_custom_post_meta' ] );
