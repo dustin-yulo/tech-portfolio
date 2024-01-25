@@ -27,7 +27,7 @@ class Assets {
 
 	public function register_styles() {
 
-		// Register styles.
+		// Register styles
 		wp_register_style( 'dy-tech-portfolio-fonts', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/library/google-fonts/fonts.css', [], false, 'all' );
 		wp_register_style( 'font-awesome', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/library/font-awesome/css/fontawesome.min.css', [], false, 'all' );
 		wp_register_style( 'font-awesome-brands', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/library/font-awesome/css/brands.min.css', [ 'font-awesome' ], false, 'all' );
@@ -35,7 +35,7 @@ class Assets {
 		wp_register_style( 'font-awesome-solid', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/library/font-awesome/css/solid.min.css', [ 'font-awesome' ], false, 'all' );
 		wp_register_style( 'dy-tech-portfolio-main', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/css/main.css', [ 'dy-tech-portfolio-fonts' ], filemtime( DY_TECH_PORTFOLIO_BUILD_DIR . '/css/main.css' ), 'all' );
 
-		// Enqueue Styles.
+		// Enqueue Styles
 		wp_enqueue_style( 'dy-tech-portfolio-fonts' );
 		wp_enqueue_style( 'font-awesome' );
 		wp_enqueue_style( 'font-awesome-brands' );
@@ -45,25 +45,20 @@ class Assets {
 	}
 
 	public function admin_register_styles() {
-		// Register styles.
+		// Register styles
 		wp_register_style( 'dy-tech-portfolio-fonts', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/library/google-fonts/fonts.css', [], false, 'all' );
 
-		// Enqueue Styles.
+		// Enqueue Styles
 		wp_enqueue_style( 'dy-tech-portfolio-fonts' );
 	}
 
 	public function register_scripts() {
 
 		// Register scripts.
-		// wp_register_script( 'main-js', AQUILA_BUILD_JS_URI . '/main.js', ['jquery', 'slick-js'], filemtime( AQUILA_BUILD_JS_DIR_PATH . '/main.js' ), true );
+		wp_register_script( 'dy-tech-portfolio-main', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/js/main.js', [ 'jquery' ], filemtime( DY_TECH_PORTFOLIO_BUILD_DIR . '/js/main.js' ), true );
 
-		// Enqueue Scripts.
-		// wp_enqueue_script( 'main-js' );
-
-		// wp_localize_script( 'main-js', 'siteConfig', [
-		// 	'ajaxUrl'    => admin_url( 'admin-ajax.php' ),
-		// 	'ajax_nonce' => wp_create_nonce( 'loadmore_post_nonce' ),
-		// ] );
+		// Enqueue Scripts
+		wp_enqueue_script( 'dy-tech-portfolio-main' );
 	}
 
 }
