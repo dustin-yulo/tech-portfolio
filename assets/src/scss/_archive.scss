@@ -1,0 +1,27 @@
+/* Stylesheet for archive page */
+
+body.archive {
+
+    .site-content {
+
+        .content-area {
+
+            article {
+
+                padding-bottom: 120px;
+
+                &:first-of-type {
+                    padding-top: 60px;
+                }
+
+                .entry-header {
+                    margin: auto;
+                }
+
+                .entry-content {
+                    padding: 0;
+                }
+            }
+        }
+    }
+}

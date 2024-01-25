@@ -1,5 +1,7 @@
 @import "variables";
 @import "general";
 @import "single";
-@import "breakpoints/tablet";
-@import "breakpoints/mobile";
+@import "archive";
+@import "breakpoints/tablet/archive";
+@import "breakpoints/mobile/general";
+@import "breakpoints/mobile/archive";
