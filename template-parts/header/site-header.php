@@ -19,3 +19,19 @@ $wrapper_classes .= has_nav_menu( 'primary' ) ? ' has-menu' : '';
 	<?php get_template_part( 'template-parts/header/site', 'social' ); ?>
 
 </header>
+
+<header id="mobile-header" class="<?php echo esc_attr( $wrapper_classes ); ?>">
+
+	<div id="mobile-topbar">
+		<?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
+		<button class="menu-toggle">
+			<div class="menu-toggler-inner"></div>
+		</button>
+	</div>
+	
+	<div id="mobile-topbar-dropdown">
+		<?php get_template_part( 'template-parts/header/site', 'nav' ); ?>
+		<?php get_template_part( 'template-parts/header/site', 'social' ); ?>
+	</div>
+
+</header>
