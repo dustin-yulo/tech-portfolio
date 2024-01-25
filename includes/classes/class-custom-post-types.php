@@ -27,11 +27,12 @@ class Custom_Post_Types {
 
 		$custom_post_types = [
             [
-                'post_type' => 'dy_tp_project',
-                'singular'  => 'Project',
-                'slug'      => 'projects',
-                'menu_icon' => 'dashicons-archive',
-                'supports'  => [ 'title', 'editor', 'thumbnail', 'custom-fields' ]
+                'post_type'     => 'dy_tp_project',
+                'singular'      => 'Project',
+                'slug'          => 'projects',
+                'description'   => 'Works that I did',
+                'menu_icon'     => 'dashicons-archive',
+                'supports'      => [ 'title', 'editor', 'thumbnail', 'custom-fields' ]
             ]
         ];
 
@@ -41,12 +42,13 @@ class Custom_Post_Types {
 	}
 
 	public function register_custom_post_type( $data ) {
-        $post_type  = $data[ 'post_type' ];
-        $singular   = $data[ 'singular' ];
-        $slug       = $data[ 'slug' ];
-        $plural     = ( isset( $data[ 'plural' ] ) ) ? $data[ 'plural' ] : $singular . 's';
-        $menu_icon  = ( isset( $data[ 'menu_icon' ] ) ) ? $data[ 'menu_icon' ] : 'dashicons-admin-generic';
-        $supports   = ( isset( $data[ 'supports' ] ) ) ? $data[ 'supports' ] : [];
+        $post_type      = $data[ 'post_type' ];
+        $singular       = $data[ 'singular' ];
+        $slug           = $data[ 'slug' ];
+        $description    = $data[ 'description' ];
+        $plural         = ( isset( $data[ 'plural' ] ) ) ? $data[ 'plural' ] : $singular . 's';
+        $menu_icon      = ( isset( $data[ 'menu_icon' ] ) ) ? $data[ 'menu_icon' ] : 'dashicons-admin-generic';
+        $supports       = ( isset( $data[ 'supports' ] ) ) ? $data[ 'supports' ] : [];
 
         $labels = [
             'name' => _x( $plural, 'Post Type General Name', 'dy-tech-portfolio' ),
@@ -80,7 +82,7 @@ class Custom_Post_Types {
 
         $args = [
             'label' => __( $singular, 'dy-tech-portfolio' ),
-            'description' => __( '', 'dy-tech-portfolio' ),
+            'description' => __( $description, 'dy-tech-portfolio' ),
             'labels' => $labels,
             'menu_icon' => $menu_icon,
             'supports' => $supports,
