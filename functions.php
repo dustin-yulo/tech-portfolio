@@ -23,7 +23,6 @@ if ( ! defined( 'DY_TECH_PORTFOLIO_BUILD_DIR_URI' ) ) {
 }
 
 require_once DY_TECH_PORTFOLIO_DIR . '/includes/helpers/autoloader.php';
-// require_once DY_TECH_PORTFOLIO_DIR . '/includes/helpers/template-tags.php';
 
 function dy_tech_portfolio_get_theme_instance() {
 	\DY_Tech_Portfolio\Includes\TECH_PORTFOLIO_THEME::get_instance();

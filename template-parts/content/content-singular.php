@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying page content in page.php
+ * Template part for displaying a single page or post content
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
