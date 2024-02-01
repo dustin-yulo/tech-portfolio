@@ -8,15 +8,15 @@
  */
 
  $dy_tp_project_post_meta = get_post_meta( get_the_ID() );
- $dy_tp_project_type = isset( $dy_tp_project_post_meta[ '_dy_tech_portfolio_custom_meta_key_project_type' ][ 0 ] ) ? $dy_tp_project_post_meta[ '_dy_tech_portfolio_custom_meta_key_project_type' ][ 0 ] : '';
- $dy_tp_project_type_longer = isset( $dy_tp_project_post_meta[ '_dy_tech_portfolio_custom_meta_key_project_type_longer' ][ 0 ] ) ? $dy_tp_project_post_meta[ '_dy_tech_portfolio_custom_meta_key_project_type_longer' ][ 0 ] : '';
- $dy_tp_project_link = isset( $dy_tp_project_post_meta[ '_dy_tech_portfolio_custom_meta_key_project_link' ][ 0 ] ) ? $dy_tp_project_post_meta[ '_dy_tech_portfolio_custom_meta_key_project_link' ][ 0 ] : '';
- $dy_tp_project_link_new_tab = isset( $dy_tp_project_post_meta[ '_dy_tech_portfolio_custom_meta_key_project_link_new_tab' ][ 0 ] ) && $dy_tp_project_post_meta[ '_dy_tech_portfolio_custom_meta_key_project_link_new_tab' ][ 0 ] == '1' ? '_blank' : '';
- $dy_tp_project_link_rel_nofollow = isset( $dy_tp_project_post_meta[ '_dy_tech_portfolio_custom_meta_key_project_link_rel_nofollow' ][ 0 ] ) && $dy_tp_project_post_meta[ '_dy_tech_portfolio_custom_meta_key_project_link_rel_nofollow' ][ 0 ] == '1' ? 'nofollow' : '';
- $dy_tp_project_link_rel_noreferrer = isset( $dy_tp_project_post_meta[ '_dy_tech_portfolio_custom_meta_key_project_link_rel_noreferrer' ][ 0 ] ) && $dy_tp_project_post_meta[ '_dy_tech_portfolio_custom_meta_key_project_link_rel_noreferrer' ][ 0 ] == '1' ? 'noreferrer' : '';
- $dy_tp_project_status = isset( $dy_tp_project_post_meta[ '_dy_tech_portfolio_custom_meta_key_project_status' ][ 0 ] ) && $dy_tp_project_post_meta[ '_dy_tech_portfolio_custom_meta_key_project_status' ][ 0 ] == 'demo' ? 'demo' : 'live';
- $dy_tp_project_button_text = isset( $dy_tp_project_post_meta[ '_dy_tech_portfolio_custom_meta_key_project_button_text' ][ 0 ] )
- 								? $dy_tp_project_post_meta[ '_dy_tech_portfolio_custom_meta_key_project_button_text' ][ 0 ]
+ $dy_tp_project_type = isset( $dy_tp_project_post_meta[ '_dy_tp_project_type' ][ 0 ] ) ? $dy_tp_project_post_meta[ '_dy_tp_project_type' ][ 0 ] : '';
+ $dy_tp_project_type_longer = isset( $dy_tp_project_post_meta[ '_dy_tp_project_type_longer' ][ 0 ] ) ? $dy_tp_project_post_meta[ '_dy_tp_project_type_longer' ][ 0 ] : '';
+ $dy_tp_project_link = isset( $dy_tp_project_post_meta[ '_dy_tp_project_link' ][ 0 ] ) ? $dy_tp_project_post_meta[ '_dy_tp_project_link' ][ 0 ] : '';
+ $dy_tp_project_link_new_tab = isset( $dy_tp_project_post_meta[ '_dy_tp_project_link_new_tab' ][ 0 ] ) && $dy_tp_project_post_meta[ '_dy_tp_project_link_new_tab' ][ 0 ] == '1' ? '_blank' : '';
+ $dy_tp_project_link_rel_nofollow = isset( $dy_tp_project_post_meta[ '_dy_tp_project_link_rel_nofollow' ][ 0 ] ) && $dy_tp_project_post_meta[ '_dy_tp_project_link_rel_nofollow' ][ 0 ] == '1' ? 'nofollow' : '';
+ $dy_tp_project_link_rel_noreferrer = isset( $dy_tp_project_post_meta[ '_dy_tp_project_link_rel_noreferrer' ][ 0 ] ) && $dy_tp_project_post_meta[ '_dy_tp_project_link_rel_noreferrer' ][ 0 ] == '1' ? 'noreferrer' : '';
+ $dy_tp_project_status = isset( $dy_tp_project_post_meta[ '_dy_tp_project_status' ][ 0 ] ) && $dy_tp_project_post_meta[ '_dy_tp_project_status' ][ 0 ] == 'demo' ? 'demo' : 'live';
+ $dy_tp_project_button_text = isset( $dy_tp_project_post_meta[ '_dy_tp_project_button_text' ][ 0 ] )
+ 								? $dy_tp_project_post_meta[ '_dy_tp_project_button_text' ][ 0 ]
 								: ( $dy_tp_project_status == 'demo' ? __( 'View demo', 'dy-tech-portfolio' )
 								: __( 'Visit website', 'dy-tech-portfolio' ) );
  $dy_tp_project_button_icon = $dy_tp_project_status == 'demo' ? 'fa-desktop' : 'fa-globe';
