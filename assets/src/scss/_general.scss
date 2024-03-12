@@ -10,6 +10,14 @@
     --theme-heading-font: #{$heading-font};
     --theme-text-font: #{$text-font};
     --theme-transition: #{$transition};
+    --wp-admin-bar-height: 32px;
+}
+
+@media (max-width: 782px) {
+
+    :root {
+        --wp-admin-bar-height: 46px;
+    }
 }
 
 html {
@@ -28,13 +36,13 @@ body,
 }
 
 html.logged-in {
-    min-height: calc(100vh - $admin-bar-height);
-    height: calc(100% - $admin-bar-height);
+    min-height: calc(100vh - var(--wp-admin-bar-height));
+    height: calc(100% - var(--wp-admin-bar-height));
 
     body,
     .site-wrapper {
-        min-height: calc(100vh - $admin-bar-height);
-        height: calc(100% - $admin-bar-height);
+        min-height: calc(100vh - var(--wp-admin-bar-height));
+        height: calc(100% - var(--wp-admin-bar-height));
     }
 }
 

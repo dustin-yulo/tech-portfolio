@@ -7,10 +7,26 @@
             .content-area {
 
                 article {
-                    padding-bottom: 90px;
+                    padding-bottom: 75px;
 
                     &:first-of-type {
-                        padding-top: 45px;
+                        padding-top: 38px;
+                    }
+                }
+
+                .projects-container {
+
+                    article {
+                        width: calc(50% - 15px);
+                        padding: 0;
+
+                        .project-snapshot {
+                            margin-bottom: 15px;
+                        }
+
+                        .project-title {
+                            font-size: 19px;
+                        }
                     }
                 }
             }

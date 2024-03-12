@@ -1,4 +1,4 @@
-/* Stylesheet for archive page */
+/* Stylesheet for archive pages */
 
 body.archive {
 
@@ -20,6 +20,47 @@ body.archive {
 
                 .entry-content {
                     padding: 0;
+                }
+            }
+
+            .projects-container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 60px 30px;
+                margin-top: 70px;
+                padding-bottom: 70px;
+
+                article {
+                    width: calc(25% - 23px);
+                    padding: 0;
+
+                    .project-snapshot {
+                        position: relative;
+                        height: 0;
+                        padding-top: 112.5%;
+                        margin-bottom: 20px;
+                        border-radius: 5px;
+                        overflow: hidden;
+
+                        img {
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            left: 0;
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+
+                    .project-type {
+                        color: var(--theme-primary-color);
+                        margin: 0 0 0.5em;
+                    }
+
+                    .project-title {
+                        font-size: 20px;
+                        margin: 0 0 0.5em;
+                    }
                 }
             }
         }

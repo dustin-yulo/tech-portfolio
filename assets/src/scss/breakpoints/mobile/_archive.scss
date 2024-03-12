@@ -17,6 +17,18 @@
                         padding-bottom: 0;
                     }
                 }
+
+                .projects-container {
+
+                    article {
+                        width: 100%;
+                        padding: 0;
+
+                        .project-title {
+                            font-size: 18px;
+                        }
+                    }
+                }
             }
         }
     }
