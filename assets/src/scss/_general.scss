@@ -29,7 +29,6 @@ html,
 body,
 .site-wrapper {
     min-height: 100vh;
-    height: 100%;
     overflow-x: hidden;
     margin: 0;
     position: relative;
@@ -433,7 +432,7 @@ body.home .site-content {
 .site-content {
     display: flex;
     margin-left: 300px;
-    height: 100%;
+    min-height: 100vh;
 
     .content-area {
         max-width: 85%;
@@ -456,4 +455,10 @@ body.home .site-content {
     &.has-dy-tech-portfolio-theme-primary-color {
         color: $primary-color;
     }
+}
+
+.loader {
+    display: none;
+    margin: 20px auto 50px;
+    max-width: 50px;
 }

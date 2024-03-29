@@ -20,6 +20,7 @@ class TECH_PORTFOLIO_THEME {
 		Custom_Meta_Boxes::get_instance();
 		Custom_Post_Types::get_instance();
 		Menus::get_instance();
+		Ajax::get_instance();
 
 		$this->setup_hooks();
 	}

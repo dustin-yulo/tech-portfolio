@@ -56,8 +56,14 @@ class Assets {
 
 		// Register scripts.
 		wp_register_script( 'dy-tech-portfolio-main', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/js/main.js', [ 'jquery' ], filemtime( DY_TECH_PORTFOLIO_BUILD_DIR . '/js/main.js' ), true );
+		wp_register_script( 'dy-tech-portfolio-archive', DY_TECH_PORTFOLIO_BUILD_DIR_URI . '/js/archive.js', [ 'jquery' ], filemtime( DY_TECH_PORTFOLIO_BUILD_DIR . '/js/archive.js' ), true );
 
 		// Enqueue Scripts
+		if( is_archive() ) {
+			wp_enqueue_script( 'dy-tech-portfolio-archive' );
+			wp_localize_script( 'dy-tech-portfolio-archive', 'ajax_object', [ 'ajax_url' => admin_url( 'admin-ajax.php' ) ] );
+		}
+
 		wp_enqueue_script( 'dy-tech-portfolio-main' );
 	}
 
