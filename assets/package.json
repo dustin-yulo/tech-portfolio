@@ -14,7 +14,8 @@
     "extends": "@wordpress/stylelint-config/scss",
     "rules": {
       "indentation": 4,
-      "no-descending-specificity": null
+      "no-descending-specificity": null,
+      "selector-class-pattern": null
     }
   },
   "author": "Dustin Yulo",
