@@ -41,7 +41,6 @@ html.logged-in {
     body,
     .site-wrapper {
         min-height: calc(100vh - var(--wp-admin-bar-height));
-        height: calc(100% - var(--wp-admin-bar-height));
     }
 }
 
