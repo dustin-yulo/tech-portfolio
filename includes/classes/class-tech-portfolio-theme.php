@@ -17,8 +17,9 @@ class TECH_PORTFOLIO_THEME {
 		// Load classes
 		Assets::get_instance();
 		Customizer::get_instance();
-		Custom_Meta_Boxes::get_instance();
 		Custom_Post_Types::get_instance();
+		Custom_Taxonomies::get_instance();
+		Custom_Meta_Boxes::get_instance();
 		Menus::get_instance();
 		Ajax::get_instance();
 
