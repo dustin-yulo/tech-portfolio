@@ -395,6 +395,15 @@ body:not(.custom-background) {
                         }
                     }
 
+                    &.skype:hover {
+                        background-color: #00b8f0;
+                        border-color: #00b8f0;
+
+                        i {
+                            color: var(--theme-white-color);
+                        }
+                    }
+
                     &.twitter:hover {
                         background-color: #1c93e4;
                         border-color: #1c93e4;

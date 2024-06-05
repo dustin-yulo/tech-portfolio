@@ -44,6 +44,7 @@ class Customizer {
             'GitHub',
             'Instagram',
             'LinkedIn',
+            'Skype',
             'Twitter',
             'YouTube',
         ];

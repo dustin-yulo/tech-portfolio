@@ -27,6 +27,10 @@ $social_links = [
         'class' => 'fa-linkedin-in'
     ],
     [ 
+        'label' => 'Skype',
+        'class' => 'fa-skype'
+    ],
+    [ 
         'label' => 'Twitter',
         'class' => 'fa-twitter'
     ],
