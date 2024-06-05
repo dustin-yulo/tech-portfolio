@@ -91,6 +91,10 @@ p {
     font-weight: 300;
     line-height: 1.5;
     margin: 0 0 1.125rem;
+
+    a {
+        text-decoration: underline;
+    }
 }
 
 ul {
