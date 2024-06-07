@@ -30,7 +30,7 @@ class Custom_Post_Types {
                 'post_type'     => 'dy_tp_project',
                 'singular'      => 'Project',
                 'slug'          => 'projects',
-                'description'   => 'Works that I did',
+                'description'   => 'Of all the projects that I helped develop or maintain, <br>these are the ones that I solely built from scratch',
                 'menu_icon'     => 'dashicons-archive',
                 'supports'      => [ 'title', 'editor', 'thumbnail', 'custom-fields' ]
             ]
