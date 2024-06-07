@@ -15,7 +15,7 @@ $description = get_the_archive_description();
 	<header class="page-header">
 		<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
 		<?php if ( $description ) : ?>
-			<h2 class="archive-description"><?php echo wp_strip_all_tags( $description ); ?></h2>
+			<h2 class="archive-description"><?php echo wp_kses( $description, [ 'br' => [] ] ); ?></h2>
 		<?php endif; ?>
 	</header>
 

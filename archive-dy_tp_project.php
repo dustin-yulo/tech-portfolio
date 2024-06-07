@@ -15,7 +15,7 @@ $description = get_the_archive_description();
 	<header class="page-header">
 		<h1 class="page-title"><?php _e( 'My projects', 'dy-tech-portfolio' ) ?></h1>
 		<?php if ( $description ) : ?>
-			<h2 class="archive-description"><?php echo wp_strip_all_tags( $description ); ?></h2>
+			<h2 class="archive-description"><?php echo wp_kses( $description, [ 'br' => [] ] ); ?></h2>
 		<?php endif; ?>
 	</header>
 
