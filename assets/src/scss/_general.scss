@@ -97,7 +97,8 @@ p {
     }
 }
 
-ul {
+ul,
+ol {
     padding-left: 1em;
 
     li {
@@ -105,12 +106,25 @@ ul {
         font-size: clamp(0.9375rem, 0.8125rem + 0.26041666666666663vw, 1.125rem);
         font-weight: 300;
         line-height: 1.5;
+
+        ul,
+        ol {
+            padding-bottom: 0.5em;
+        }
+    }
+
+    a {
+        text-decoration: underline;
     }
 }
 
 a {
     color: var(--theme-white-color);
     text-decoration: none;
+
+    &:hover {
+        color: var(--theme-primary-color);
+    }
 }
 
 input,
@@ -227,6 +241,7 @@ body:not(.custom-background) {
                 a {
                     position: relative;
                     font-weight: 400;
+                    text-decoration: none;
                     transition: $transition;
 
                     &::before {

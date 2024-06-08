@@ -21,6 +21,7 @@ body.single {
         margin-top: 50px;
 
         [role="button"] {
+            color: var(--theme-white-color);
             display: inline-flex;
             align-items: center;
             gap: 0.9rem;
