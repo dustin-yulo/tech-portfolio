@@ -1,5 +1,7 @@
 <?php
 /**
+ * Template Name: Projects Archive
+ * 
  * The template for displaying the projects list
  *
  * @package DY_Tech_Portfolio
