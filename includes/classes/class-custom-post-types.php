@@ -19,8 +19,7 @@ class Custom_Post_Types {
 
 	protected function setup_hooks() {
 
-		// Actions
-        add_action( 'init', [ $this, 'init_custom_post_types' ] );
+		add_action( 'init', [ $this, 'init_custom_post_types' ] );
 	}
 
 	public function init_custom_post_types() {

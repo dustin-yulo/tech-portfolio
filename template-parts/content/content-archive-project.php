@@ -2,8 +2,6 @@
 /**
  * Template part for displaying projets grid
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
  * @package DY_Tech_Portfolio
  */
 

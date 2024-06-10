@@ -1,8 +1,6 @@
 <?php
 /**
- * Template part for displaying project content in single-dy_tp_project.php
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ * Template part for displaying single project content
  *
  * @package DY_Tech_Portfolio
  */

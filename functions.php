@@ -1,6 +1,6 @@
 <?php
 /**
- * Theme Functions.
+ * Theme Functions
  *
  * @package DY_Tech_Portfolio
  */

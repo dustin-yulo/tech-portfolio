@@ -22,8 +22,7 @@ class Customizer {
 
 	protected function setup_hooks() {
 
-		// Actions
-        add_action( 'customize_register', [ $this, 'dy_customizer_sections' ] );
+		add_action( 'customize_register', [ $this, 'dy_customizer_sections' ] );
         add_action( 'customize_register', [ $this, 'dy_register_social_links' ] );
         add_action( 'customize_register', [ $this, 'dy_register_random_fields' ] );
 	}

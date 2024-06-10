@@ -25,7 +25,7 @@ $description = get_the_archive_description();
 	<?php endwhile; ?>
 
 <?php else : ?>
-	<?php //get_template_part( 'template-parts/content/content-none' ); ?>
+	<h2><?php _e( 'No posts found', 'dy-tech-portfolio' ) ?></h2>
 <?php endif; ?>
 
 <?php get_footer(); ?>

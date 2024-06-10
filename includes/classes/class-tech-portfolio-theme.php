@@ -14,7 +14,6 @@ class TECH_PORTFOLIO_THEME {
 
 	protected function __construct() {
 
-		// Load classes
 		Assets::get_instance();
 		Customizer::get_instance();
 		Custom_Post_Types::get_instance();
@@ -28,7 +27,6 @@ class TECH_PORTFOLIO_THEME {
 
 	protected function setup_hooks() {
 
-		// Actions
 		add_action( 'after_setup_theme', [ $this, 'theme_setup' ] );
 		add_action( 'wp_head', [ $this, 'expose_css_variables' ] );
 		add_action( 'admin_head', [ $this, 'expose_css_variables' ] );

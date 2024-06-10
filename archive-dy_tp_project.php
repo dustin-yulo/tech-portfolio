@@ -28,7 +28,7 @@ $description = get_the_archive_description();
 	<?php get_template_part( 'template-parts/assets/loader-bouncing-squares' ); ?>
 
 <?php else : ?>
-	<?php //get_template_part( 'template-parts/content/content-none' ); ?>
+	<h2><?php _e( 'No projects found', 'dy-tech-portfolio' ) ?></h2>
 <?php endif; ?>
 
 <?php get_footer(); ?>

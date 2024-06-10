@@ -2,8 +2,6 @@
 /**
  * Template part for displaying a single page or post content
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
  * @package DY_Tech_Portfolio
  */
 

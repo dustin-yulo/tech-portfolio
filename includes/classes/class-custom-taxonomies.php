@@ -19,8 +19,7 @@ class Custom_Taxonomies {
 
 	protected function setup_hooks() {
 
-		// Actions
-        add_action( 'init', [ $this, 'init_custom_taxonomies' ] );
+		add_action( 'init', [ $this, 'init_custom_taxonomies' ] );
 	}
 
 	public function init_custom_taxonomies() {

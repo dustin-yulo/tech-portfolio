@@ -30,7 +30,7 @@ class Custom_Meta_Boxes {
             'metabox-file-upload-script',
             get_template_directory_uri() . '/assets/build/js/metabox-file-upload.js',
             [ 'jquery', 'wp-i18n', 'media-upload' ],
-            1.0,
+            null,
             true
         );
 
