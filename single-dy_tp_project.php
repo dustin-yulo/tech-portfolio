@@ -1,5 +1,7 @@
 <?php
 /**
+ * Template Name: Single Project
+ * 
  * The template for displaying a single project
  *
  * @package DY_Tech_Portfolio
