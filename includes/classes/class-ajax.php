@@ -32,7 +32,7 @@ class Ajax {
             'paged'          => $page,
         ];
 
-        $args = apply_filters( 'dy_load_projects_query_args', $args );
+        $args = apply_filters( 'dy_tech_portfolio_projects_query_args_filter', $args );
     
         $query = new \WP_Query( $args );
     
