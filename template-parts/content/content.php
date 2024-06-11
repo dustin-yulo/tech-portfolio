@@ -7,7 +7,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>">
 	<header class="entry-header">
 		<a href="<?php echo esc_url( get_permalink() ); ?>">
 			<?php if( has_post_thumbnail() ) { the_post_thumbnail( 'full' ); } ?>
