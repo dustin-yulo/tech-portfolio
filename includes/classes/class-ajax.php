@@ -31,6 +31,8 @@ class Ajax {
             'post_status'    => 'publish',
             'paged'          => $page,
         ];
+
+        $args = apply_filters( 'dy_load_projects_query_args', $args );
     
         $query = new \WP_Query( $args );
     
