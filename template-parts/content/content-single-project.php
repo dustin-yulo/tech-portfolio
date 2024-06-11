@@ -29,7 +29,7 @@
  }
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>">
 
 	<header class="entry-header">
 		<h1><?php echo get_post_type_object( get_post_type() )->labels->singular_name ?></h1>

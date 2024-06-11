@@ -11,7 +11,7 @@
  $dy_tp_project_snapshot_alt_text = !empty( $dy_tp_project_snapshot ) ? get_post_meta( attachment_url_to_postid( $dy_tp_project_snapshot ), '_wp_attachment_image_alt', true ) : '';
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>">
 	<header class="entry-header">
 		<a href="<?php echo esc_url( get_permalink() ); ?>">
 			<?php if( $dy_tp_project_snapshot ) { ?>
