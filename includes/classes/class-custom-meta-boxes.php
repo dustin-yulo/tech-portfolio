@@ -77,9 +77,13 @@ class Custom_Meta_Boxes {
 					$custom_post_type,
 					$custom_meta_key,
 					[
-						'show_in_rest' => true,
-						'single'       => true,
-					]
+                        'show_in_rest' => true,
+                        'single' => true,
+                        'type' => 'string',
+                        'auth_callback' => function() {
+                            return current_user_can( 'edit_posts' );
+                        },
+                    ]
 				);
 			}
         }
